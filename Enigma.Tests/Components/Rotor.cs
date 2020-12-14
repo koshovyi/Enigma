@@ -39,25 +39,7 @@ namespace Enigma.Tests
 		}
 
 		[Theory]
-		[InlineData('U', 'Q', 'R')]
-		[InlineData('N', 'X', 'K')]
-		public void Rotor_RotorI_Enter(char exp, char head, char @char)
-		{
-			//Arrange
-			Rotor r = HistoricData.EnigmaI.I;
-			r.IsFirst = true;
-			r.SetHead(head);
-
-			//Act
-			char result = r.Enter(@char);
-
-			//Assert
-			Assert.Equal(exp, result);
-		}
-
-		[Theory]
 		[InlineData('L', 'G', 'F')]
-		//[InlineData('M', 'X', 'X')]
 		public void Rotor_ReflectorB_Enter(char exp, char @char, char head)
 		{
 			//Arrange

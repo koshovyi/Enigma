@@ -50,6 +50,50 @@ namespace Enigma.Tests
 			Assert.Equal(exp, result);
 		}
 
+		[Theory]
+		[InlineData("O", 'I', 'V', 'D', 'F', 'Y', "F")]
+		[InlineData("B", 'B', 'H', 'U', 'P', 'T', "P")]
+		[InlineData("MEHPXWIBWQXE", 'B', 'Q', 'L', 'A', 'K', "KOSHOVYIDIMA")]
+		public void Enigma_I_II_III_Plugboard1(string exp, char left, char mid, char right, char pb1, char pb2, string enter)
+		{
+			//Arrange
+			Enigma e = new Enigma();
+			e.Rotors.Add(RotorType.Rotor_III, right);
+			e.Rotors.Add(RotorType.Rotor_II, mid);
+			e.Rotors.Add(RotorType.Rotor_I, left);
+			e.Rotors.SetReflector(ReflectorType.UWK_B);
+			e.Plugboard.Add(pb1, pb2);
+
+			//Act	
+			string result = e.Encrypt(enter);
+
+			//Assert
+			Assert.Equal(exp, result);
+		}
+
+
+		[Theory]
+		[InlineData("RRJEVLDAWHEAVHUFBHUUCLFLISGYWEXFVYD", 'G', 'K', 'S', "THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG")]
+		public void Enigma_I_II_III_Plugboard2(string exp, char left, char mid, char right, string enter)
+		{
+			//Arrange
+			Enigma e = new Enigma();
+			e.Rotors.Add(RotorType.Rotor_III, right);
+			e.Rotors.Add(RotorType.Rotor_II, mid);
+			e.Rotors.Add(RotorType.Rotor_I, left);
+			e.Rotors.SetReflector(ReflectorType.UWK_B);
+			e.Plugboard.Add('D', 'N');
+			e.Plugboard.Add('U', 'I');
+			e.Plugboard.Add('Z', 'W');
+			e.Plugboard.Add('J', 'O');
+
+			//Act	
+			string result = e.Encrypt(enter);
+
+			//Assert
+			Assert.Equal(exp, result);
+		}
+
 		/* Exceptions */
 
 		[Fact]

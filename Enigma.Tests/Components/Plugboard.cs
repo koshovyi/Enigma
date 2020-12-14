@@ -39,26 +39,5 @@ namespace Enigma.Tests
 			Assert.Throws<Exceptions.EnigmaPlugboardAddCharException>(() => p.Add('A', '1'));
 		}
 
-		[Fact]
-		public void Plugboard_Exception_EnigmaPlugboardAddCharException()
-		{
-			//Arrange
-			Plugboard p = new Plugboard();
-
-			//Act && Assert
-			Assert.Throws<Exceptions.EnigmaPlugboardAddCharException>(() => p.Add('1', 'A'));
-			Assert.Throws<Exceptions.EnigmaPlugboardAddCharException>(() => p.Add('A', '1'));
-		}
-
-		[Fact]סמנצû 
-		public void Plugboard_Exception_ArgumentNullException()
-		{
-			//Arrange
-			Plugboard p = new Plugboard();
-
-			//Act && Assert
-			Assert.Throws<ArgumentNullException>(() => p.Add(null));
-		}
-
 	}
 }
