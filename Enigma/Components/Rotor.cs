@@ -20,7 +20,7 @@ namespace Enigma
 
 		public Rotor Next { get; set; }
 
-		public RotorType Type { get; set; }
+		public Type Type { get; set; }
 
 		public bool IsFirst { get; set; }
 
@@ -32,7 +32,7 @@ namespace Enigma
 
 		#endregion
 
-		public Rotor(RotorType type, string chars)
+		public Rotor(Type type, string chars)
 		{
 			this._chars = chars.ToCharArray();
 			this.Type = type;
@@ -56,7 +56,7 @@ namespace Enigma
 
 		public char Enter(char @char)
 		{
-			if (this.Current == this.Turnover && this.Type != RotorType.Keyboard && this.Type != RotorType.Reflector)
+			if (this.Current == this.Turnover && this.Type == Type.Rotor)
 				this.Prev.Rotate();
 			if(this.IsFirst)
 				this.Rotate();
@@ -92,6 +92,7 @@ namespace Enigma
 			else
 				this._head++;
 		}
+
 	}
 
 }

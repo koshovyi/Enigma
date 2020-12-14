@@ -39,6 +39,7 @@ namespace Enigma
 
 		public char Get(char @char)
 		{
+			@char = char.ToUpper(@char);
 			if (this._l1.Contains(@char))
 				return _l2[_l1.IndexOf(@char)];
 			if (this._l2.Contains(@char))

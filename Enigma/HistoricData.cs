@@ -9,7 +9,7 @@
 		/// </summary>
 		public static Rotor Keyboard
 		{
-			get => new Rotor(RotorType.Keyboard, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+			get => new Rotor(Type.Keyboard, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 			{
 				Notch = '\0',
 				Turnover = '\0',
@@ -24,7 +24,7 @@
 
 			public static Rotor I
 			{
-				get => new Rotor(RotorType.Rotor_I, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")
+				get => new Rotor(Type.Rotor, "EKMFLGDQVZNTOWYHXUSPAIBRCJ")
 				{
 					Notch = 'Y',
 					Turnover = 'Q',
@@ -33,7 +33,7 @@
 
 			public static Rotor II
 			{
-				get => new Rotor(RotorType.Rotor_II, "AJDKSIRUXBLHWTMCQGZNPYFVOE")
+				get => new Rotor(Type.Rotor, "AJDKSIRUXBLHWTMCQGZNPYFVOE")
 				{
 					Notch = 'M',
 					Turnover = 'E',
@@ -42,7 +42,7 @@
 
 			public static Rotor III
 			{
-				get => new Rotor(RotorType.Rotor_III, "BDFHJLCPRTXVZNYEIWGAKMUSQO")
+				get => new Rotor(Type.Rotor, "BDFHJLCPRTXVZNYEIWGAKMUSQO")
 				{
 					Notch = 'D',
 					Turnover = 'V',
@@ -59,18 +59,18 @@
 
 			public static Rotor ReflectorA
 			{
-				get => new Rotor(RotorType.Reflector, "EJMZALYXVBWFCRQUONTSPIKHGD");
+				get => new Rotor(Type.Reflector, "EJMZALYXVBWFCRQUONTSPIKHGD");
 			}
 
 
 			public static Rotor ReflectorB
 			{
-				get => new Rotor(RotorType.Reflector, "YRUHQSLDPXNGOKMIEBFZCWVJAT");
+				get => new Rotor(Type.Reflector, "YRUHQSLDPXNGOKMIEBFZCWVJAT");
 			}
 
 			public static Rotor ReflectorC
 			{
-				get => new Rotor(RotorType.Reflector, "FVPJIAOYEDRZXWGCTKUQSBNMHL");
+				get => new Rotor(Type.Reflector, "FVPJIAOYEDRZXWGCTKUQSBNMHL");
 			}
 
 		}

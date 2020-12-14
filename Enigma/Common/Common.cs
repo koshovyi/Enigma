@@ -8,8 +8,6 @@ namespace Enigma
 
 		public static char[] ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
 
-		public const int ASCII_FIRST_LETTER = 65;
-
 		public const int MODULO_MAX_LETTERS = 26;
 
 		public static char CharPlusN(int c, int n) => ALPHABET[(c + n) % MODULO_MAX_LETTERS];

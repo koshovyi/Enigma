@@ -93,21 +93,29 @@ namespace Enigma
 
 		public void SetReflector(Rotor reflector)
 		{
-			if (reflector.Type != RotorType.Reflector)
+			if (reflector.Type != Type.Reflector)
 				throw new Exceptions.EnigmaRotorsException();
 
 			this.Reflector = reflector;
 		}
 
-		public char Enter(char @char)
+		public char Enter(char @char, Plugboard pb)
 		{
 			char result = @char;
+
+			if (pb.Exist(result))
+				result = pb.Get(result);
+
 			for (int i = 0; i < this._list.Count; i++)
 				result = this._list[i].Enter(result);
 			result = this.Reflector.Reverse(result);
 			for (int i = this._list.Count - 1; i >= 0; i--)
 				result = this._list[i].Reverse(result);
 			result = this._keyboard.Reverse(result);
+
+			if (pb.Exist(result))
+				result = pb.Get(result);
+
 			return result;
 		}
 
